@@ -7,6 +7,10 @@ function addToCart(item) {
     selectedItem.classList.add('cartImg');
     /* go to css and add cartimg */
     selectedItem.setAttribute('id', addItemId); /* above the function add a var */
+    
+    var cartItems = document.getElementById('title');
+    cartItems.append(selectedItem);
+
     var img = document.createElement('img'); 
     img.setAttribute('src',item.children[0].currentSrc);
      /* after > img */
@@ -26,5 +30,10 @@ function addToCart(item) {
     selectedItem.append(title);
     selectedItem.append(label);
     selectedItem.append(delBtn);
+
     cartItems.append(selectedItem);
+}
+
+function del(item) {
+    document.getElementById(item).remove();
 }
